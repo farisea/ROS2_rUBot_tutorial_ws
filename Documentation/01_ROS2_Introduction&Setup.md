@@ -61,9 +61,14 @@ Here's a basic overview: Picture from ROS Official documentation: https://docs.r
 ## **Setup a usefull working ROS environment**
 
 To work properly in ROS environment, you can:
-- use the ROS environment developed by "The Construct" third party enterprise.
 - use the UB custom Docker-based ROS2 Humble environment
+- use the ROS environment developed by "The Construct" third party enterprise.
 
+### UB custom Docker-based ROS2 Humble environment
+
+We have designed a University of Barcelona custom Docker-based ROS 2 Humble environment to simplify student access to ROS 2 and ensure platform-independent workflows in robotics courses.
+
+The installation details are described on: [UB custom ROS2 Humble environment](https://github.com/manelpuig/my_rUBot_mecanum/blob/humble/network_config/humble/Custom_Docker_container_humble.md)
 ### "The Construct" ROS environment
 
 Is recommended for fast and reliable use:
@@ -75,12 +80,6 @@ Is recommended for fast and reliable use:
 ![](./Images/01_ROS2_setup/06_Rosject.png)
 You will have 2GB Virtual machine with Ubuntu 22 and ROS2 Humble installed for free!!
 
-### UB custom Docker-based ROS2 Humble environment
-
-We have designed a University of Barcelona custom Docker-based ROS 2 Humble environment to simplify student access to ROS 2 and ensure platform-independent workflows in robotics courses.
-
-The installation details are described on: [UB custom ROS2 Humble environment](https://github.com/manelpuig/my_rUBot_mecanum/blob/humble/network_config/humble/Custom_Docker_container_humble.md)
-
 ## **Prepare your Workspace**
 
 When working in Laboratory groups, we suggest you:
@@ -90,10 +89,9 @@ When working in Laboratory groups, we suggest you:
 - Then the `Collaborators` will make a "fork" of the `Director`'s github project.
 - The `Collaborators` will be able to update the github `Director`'s project and participate on the project generation
 
-To work on the project (during lab sessions or for homework at home), each student has to clone the `Director`'s github project in the `TheConstruct working environment`.
-- Open your ROS2 Humble environment:  https://app.theconstructsim.com/
-- Open your created ROS2_Humble Rosject project
-- Clone your forked `Director`'s github project
+To work on the project (during lab sessions or for homework at home), each student has to clone the `Director`'s github project in his ROS2 Humble working environment.
+- Open your ROS2 Humble environment
+- Clone the `Director`'s github project
   ```shell
   cd /home/user
   git clone https://github.com/director_username/ROS2_rUBot_tutorial_ws
@@ -126,13 +124,16 @@ To work on the project (during lab sessions or for homework at home), each stude
     git config --global user.name "your_github_username"
     ```
     > Include the name an email you have used to create your github account
+    >
+    > verify your `/home/user/` path
+
 You are ready to work with your repository for this session!
 
 **Repository syncronisation**
 
 The objective is to update the changes you have made, when working in ROS2 environment, in your github repository.
 
-- Access to the TheConstruct environment local repository:
+- Access to your environment local repository:
   ````shell
   cd /home/user/ROS2_rUBot_tutorial_ws
   ````
@@ -141,13 +142,13 @@ The objective is to update the changes you have made, when working in ROS2 envir
   git pull
   ````
 - You can work with your local repository for the speciffic project session
-- Once you have finished and you want to syncronize the changes you have made and update the github origin repository, type:
+- Once you have finished and you want to syncronize the changes you have made and update the github origin repository.  You can use VScode graphical tool options or type:
   ````shell
   git add .
   git commit -m "Message"
   git push
   ````
-- You will have to specify the Username and Password (Personal Access Token you have generated)
+  > You will have to specify the Username and Password (Personal Access Token you have generated)
 
 To obtain the **PAT** in github follow the instructions:
 
@@ -169,7 +170,7 @@ Your github origin repository has been updated!
 In this section we will practice the ROS2 concepts with a very simple and useful turtlesim robot.
 
 Documentation:
-- https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Introducing-Turtlesim/Introducing-Turtlesim.html
+- [Turtlesim project](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Introducing-Turtlesim/Introducing-Turtlesim.html)
 
 **Turtlesim environment**
 

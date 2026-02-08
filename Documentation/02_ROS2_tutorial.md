@@ -3,9 +3,9 @@
 The objective of this section is to learn how to ceate a Package to perform a specific project and the needed nodes to give the desired functionality to the robot.
 
 Bibliography:
-- RO2 Humble official doc: https://docs.ros.org/en/humble/
-- Edouard Renard: https://www.udemy.com/course/ros2-for-beginners/learn/lecture/21305270#overview
-- ROS2 Basics in 5 Days (Python): https://www.robotigniteacademy.com/courses/268
+- [RO2 Humble official doc](https://docs.ros.org/en/humble/)
+- [Edouard Renard-Udemy course](https://www.udemy.com/course/ros2-for-beginners/learn/lecture/21305270#overview)
+- [ROS2 Basics in 5 Days (Python)-TheConstruct course](https://www.robotigniteacademy.com/courses/268)
 
 
 ## **1. ROS2 workspace and packages**
