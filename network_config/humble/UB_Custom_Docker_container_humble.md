@@ -5,19 +5,19 @@ We have designed a University of Barcelona custom Docker-based ROS 2 Humble envi
 A proper Docker Image has been created with the custom configuration on Dockerfile and uploaded to my DockerHub account (https://hub.docker.com/r/manelpuig/ros2-humble-biorobub-pc).
 
 **Students** in the lab they only need to:
-- Verify you have installed `Docker Engine` and `Docker Compose plugin` from the official Docker repositories. Open Docker Desktop on your Host PC.
+- Verify you have installed `Docker Engine`, `Docker Desktop` and `Docker Compose plugin` from the official Docker repositories. Open Docker Desktop on your Host PC.
 - Open VScode in a working directory (e.g., `~/Desktop/rob/`) on your Host PC.
     - Install the `Docker` and `Remote Development` extensions from the VScode marketplace.
-    - Clone your forked repository `ROS2_rUBot_tutorial`
-- In `~/ROS2_rUBot_tutorial/network_config/humble` review in function of Home or Laboratory case, on:
+    - Clone your forked repository `ROS2_rUBot_tutorial_ws`
+- In `~/ROS2_rUBot_tutorial_ws/network_config/humble` review in function of Home or Laboratory case, on:
     - `docker-compose.yaml` file: 
         - `ROS_DOMAIN_ID=1` variable to match your Group number.
         - `ROS_AUTOMATIC_DISCOVERY_RANGE` SUBNET or OFF depending on Home or Lab use.
-        - `ROS_STATIC_PEERS` not set or set with IP to match your robot IP.
+        - `ROS_STATIC_PEERS` not set (Home use) or set with IP to match your robot IP (Lab Use).
     - `cyclonedds_pc.xml` file: 
         - `NetworkInterface`: not specified.
         - `AllowMulticast` true or false depending on Home or Lab use.
-- Open a terminal in `~/ROS2_rUBot_tutorial/network_config/humble` and run:
+- Open a terminal in `~/ROS2_rUBot_tutorial_ws/network_config/humble` and run:
     ````bash
     xhost +local:root            # allow X11 for Docker (lab use only)
     docker compose up
@@ -32,17 +32,18 @@ A proper Docker Image has been created with the custom configuration on Dockerfi
     ```bash
     source /opt/ros/humble/setup.bash
     source ~/ROS2_rUBot_tutorial_ws/install/setup.bash
+    export QT_QPA_PLATFORM=xcb  # good default for RViz2 on many systems
     cd ~/ROS2_rUBot_tutorial_ws
     ```
 
 You are ready to work inside the container and to connect to the robot hardware within ROS2 Humble on Docker!
 
-- To stop the container:
-    ````bash
+- To stop the container, open a new terminal on Host in `~/ROS2_rUBot_tutorial_ws/network_config/humble` and run:
+    ```bash
     docker compose down
-    ````
+    ```
 - To see the Images and Containers:
-    ````bash
+    ```bash
     docker ps -a               # containers
     docker images              # images
-    ````
+    ```
