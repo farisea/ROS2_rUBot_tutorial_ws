@@ -24,6 +24,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            'turtle_move = ros2_move_turtle.turtle_move:main',
         ],
     },
 )
