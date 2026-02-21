@@ -5,10 +5,10 @@ from geometry_msgs.msg import Twist
 from turtlesim.msg import Pose
 
 
-class TurtleMove(Node):
+class MoveTurtle(Node):
 
     def __init__(self):
-        super().__init__('turtle_move')
+        super().__init__('move_turtle')
 
         # Atributos de posición
         self.x = 0.0
@@ -60,14 +60,14 @@ class TurtleMove(Node):
 def main(args=None):
     rclpy.init(args=args)
 
-    turtle_move = TurtleMove()
+    move_turtle = MoveTurtle()
 
-    rclpy.spin(turtle_move)
+    rclpy.spin(move_turtle)
 
     # Destroy the node explicitly
     # (optional - otherwise it will be done automatically
     # when the garbage collector destroys the node object)
-    turtle_move.destroy_node()
+    move_turtle.destroy_node()
     rclpy.shutdown()
 
 

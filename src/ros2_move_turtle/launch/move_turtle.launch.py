@@ -9,6 +9,6 @@ def generate_launch_description():
             output='screen'),
         Node(
             package='ros2_move_turtle',
-            executable='turtle_move_exec',
+            executable='move_turtle_exec',
             output='screen'),
     ])
