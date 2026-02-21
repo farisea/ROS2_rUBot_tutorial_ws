@@ -35,7 +35,9 @@ class TurtleMove(Node):
         self.x = msg.x
         self.y = msg.y
         self.theta = msg.theta
-        self.get_logger().info(f'Posición Turtle: x={self.x:.2f}, y={self.y:.2f}, theta={self.theta:.2f}')
+
+        # Demasiado verbose, comentado para evitar saturar la consola
+        #self.get_logger().info(f'Posición Turtle: x={self.x:.2f}, y={self.y:.2f}, theta={self.theta:.2f}')
 
 
     def timer_callback(self):
@@ -44,12 +46,14 @@ class TurtleMove(Node):
         # Detener el movimiento si x o y superan 7.0
         if self.x > 7.0 or self.y > 7.0:
             msg.linear.x, msg.linear.y, msg.angular.z = 0.0, 0.0, 0.0
+            self.get_logger().info(f'Posición x={self.x:.2f}, y={self.y:.2f}, deteniendo movimiento.')
         # Si no, avanzar en el eje x
         else:
             msg.linear.x, msg.linear.y, msg.angular.z = 1.0, 0.0, 0.0
+            self.get_logger().info(f'Posición x={self.x:.2f}, y={self.y:.2f}, Turtle puede avanzar.')
 
         self.publisher_.publish(msg)
-        self.get_logger().info(f'Publicando: linear.x={msg.linear.x}, linear.y={msg.linear.y}, angular.z={msg.angular.z}')
+        self.get_logger().info(f'Publicando: linear.x={msg.linear.x}, linear.y={msg.linear.y}, angular.z={msg.angular.z}\n')
         self.i += 1
 
 
